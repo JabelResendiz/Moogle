@@ -1,15 +1,41 @@
-.results {
+.search-page {
+    max-width: 52rem;
+    margin: 0 auto;
     text-align: left;
 }
 
-.item .title {
-    font-size: large;
-    font-weight: bold;
+.search-header {
+    margin-bottom: 2rem;
 }
- h1{
-    color:#091cf2;
- }
 
+.search-header h1 {
+    color: #164e63;
+    margin-bottom: .5rem;
+}
 
+.eyebrow {
+    color: #0f766e;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
 
+.suggestion {
+    margin-top: 2rem;
+}
 
+.suggestion-button {
+    background: transparent;
+    border: 0;
+    color: #0f766e;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0 .2rem;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #b91c1c;
+    margin-top: .5rem;
+}

@@ -1,0 +1,35 @@
+@if (IsBusy)
+{
+    <p class="status" role="status">Searching indexed documents...</p>
+}
+else if (HasSearched && Result is not null && Result.Count == 0)
+{
+    <p class="status" role="status">No documents matched your search.</p>
+}
+else if (Result is not null)
+{
+    <section aria-labelledby="results-heading">
+        <h2 id="results-heading">Search results</h2>
+        <ul class="results">
+            @foreach (var item in Result.Items())
+            {
+                <li @key="item.Title" class="result-item">
+                    <h3>@item.Title</h3>
+                    <p>@item.Snippet</p>
+                    <small>Relevance: @item.Score.ToString("P1")</small>
+                </li>
+            }
+        </ul>
+    </section>
+}
+
+@code {
+    [Parameter]
+    public SearchResult? Result { get; set; }
+
+    [Parameter]
+    public bool HasSearched { get; set; }
+
+    [Parameter]
+    public bool IsBusy { get; set; }
+}

@@ -452,3 +452,11 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+
+# latex auxiliar
+*.aux
+*.fls
+*.synctex.gz
+*toc
+*fdb_latexmk

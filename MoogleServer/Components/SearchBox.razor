@@ -1,0 +1,40 @@
+@using System.ComponentModel.DataAnnotations
+
+<EditForm Model="@request" OnValidSubmit="SubmitAsync" class="search-form" role="search">
+    <DataAnnotationsValidator />
+    <label for="search-query">Search documents</label>
+    <div class="search-controls">
+        <InputText id="search-query"
+                   @bind-Value="request.Query"
+                   class="search-input"
+                   autocomplete="off"
+                   aria-describedby="search-help"
+                   placeholder="Enter your search" />
+        <button type="submit" class="search-button" disabled="@IsBusy">
+            @(IsBusy ? "Searching..." : "Search")
+        </button>
+    </div>
+    <small id="search-help">Enter a term to search the indexed documents.</small>
+    <ValidationMessage For="@(() => request.Query)" />
+</EditForm>
+
+@code {
+    [Parameter, EditorRequired]
+    public EventCallback<string> OnSearch { get; set; }
+
+    [Parameter]
+    public bool IsBusy { get; set; }
+
+    private SearchRequest request = new();
+
+    private async Task SubmitAsync()
+    {
+        await OnSearch.InvokeAsync(request.Query.Trim());
+    }
+
+    private sealed class SearchRequest
+    {
+        [Required(ErrorMessage = "Enter a search term.")]
+        public string Query { get; set; } = string.Empty;
+    }
+}

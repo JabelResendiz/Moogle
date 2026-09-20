@@ -1,0 +1,37 @@
+section {
+    margin-top: 2rem;
+}
+
+section h2 {
+    color: #164e63;
+    font-size: 1.35rem;
+}
+
+.results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.result-item {
+    border-top: 1px solid #cbd5e1;
+    padding: 1.25rem 0;
+}
+
+.result-item h3 {
+    color: #164e63;
+    font-size: 1.1rem;
+    margin: 0 0 .5rem;
+}
+
+.result-item p {
+    margin: 0 0 .5rem;
+}
+
+.result-item small {
+    color: #475569;
+}
+
+.status {
+    margin-top: 2rem;
+}

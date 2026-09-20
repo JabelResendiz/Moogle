@@ -1,0 +1,52 @@
+.search-form label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.search-controls {
+    display: flex;
+    gap: .75rem;
+}
+
+.search-input {
+    border: 1px solid #94a3b8;
+    border-radius: .25rem;
+    flex: 1;
+    min-height: 2.75rem;
+    padding: .5rem .75rem;
+}
+
+.search-button {
+    background: #0f766e;
+    border: 0;
+    border-radius: .25rem;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    padding: .65rem 1rem;
+}
+
+.search-button:disabled {
+    cursor: wait;
+    opacity: .65;
+}
+
+.search-form small {
+    color: #475569;
+    display: block;
+    margin-top: .5rem;
+}
+
+.search-form ::deep .validation-message {
+    color: #b91c1c;
+    display: block;
+    margin-top: .5rem;
+}
+
+@media (max-width: 40rem) {
+    .search-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
